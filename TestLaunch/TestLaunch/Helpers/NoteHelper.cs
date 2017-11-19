@@ -17,6 +17,7 @@ namespace TestLaunch
             manager._navigation.GoToMyDiary();
             manager._iWebDriver.FindElement(By.Id("title")).Clear();
             manager._iWebDriver.FindElement(By.Id("title")).SendKeys(NF.Title);
+            //manager._iWebDriver.FindElement(By.Id("imp_redactor_frame_itemtext")).SendKeys(manager._iWebDriver.FindElement(By.ClassName("f_title")).Text);
             manager._iWebDriver.FindElement(By.Id("imp_redactor_frame_itemtext")).SendKeys(NF.Note);
             try
             {
@@ -37,28 +38,6 @@ namespace TestLaunch
         }
 
        
-
-        public string CloseAlertAndGetItsText()
-        {
-            try
-            {
-                IAlert alert = manager._iWebDriver.SwitchTo().Alert();
-                string alertText = alert.Text;
-                if (_acceptNextAlert)
-                {
-                    alert.Accept();
-                }
-                else
-                {
-                    alert.Dismiss();
-                }
-                return alertText;
-            }
-            finally
-            {
-                _acceptNextAlert = true;
-            }
-        }
 
     }
 }

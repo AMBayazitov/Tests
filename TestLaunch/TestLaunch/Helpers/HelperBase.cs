@@ -20,11 +20,11 @@ namespace TestLaunch
             this.manager = manager;
 
         }
-        private bool IsElementPresent(By by)
+        public bool IsElementPresent(By by)
         {
             try
             {
-                driver.FindElement(by);
+                manager._iWebDriver.FindElement(by); //почему напрямую через драйвер не работает?
                 return true;
             }
             catch (NoSuchElementException)
@@ -56,5 +56,28 @@ namespace TestLaunch
                 acceptNextAlert = value;
             }
         }
+
+        public string CloseAlertAndGetItsText()
+        {
+            try
+            {
+                IAlert alert = manager._iWebDriver.SwitchTo().Alert();
+                string alertText = alert.Text;
+                if (_acceptNextAlert)
+                {
+                    alert.Accept();
+                }
+                else
+                {
+                    alert.Dismiss();
+                }
+                return alertText;
+            }
+            finally
+            {
+                _acceptNextAlert = true;
+            }
+        }
+
     }
 }
