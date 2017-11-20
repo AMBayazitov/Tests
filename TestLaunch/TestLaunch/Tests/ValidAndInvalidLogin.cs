@@ -8,22 +8,26 @@ using System.Threading.Tasks;
 namespace TestLaunch.Tests
 {
     [TestFixture]
-    class ValidAndInvalidLogin : AuthBase
+    class ValidAndInvalidLogin : TestBase
     {
         [Test]
         public void ValidLoginTest()
         {
+            AccountData AD = new AccountData("SaturnAlla","a'q]w[ep");
             Notification NF = new Notification("Validation test", "Test passed");
+            appMan._loginHelper.Login(AD);
             appMan._noteHelper.CreateNotification(NF);
-            appMan._loginHelper.LogOut();
+            appMan._loginHelper.Logout();
         }
 
         [Test]
         public void InvalidLoginTest()
         {
+            AccountData AD = new AccountData("SaturnAlla", "a'q]w[ep");
             Notification NF = new Notification("Validation test", "Test failed");
+            appMan._loginHelper.Login(AD);
             appMan._noteHelper.CreateNotification(NF);
-            appMan._loginHelper.LogOut("weterg");
+            appMan._loginHelper.Logout();
         }
         
     }

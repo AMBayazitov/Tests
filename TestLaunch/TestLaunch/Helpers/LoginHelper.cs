@@ -13,6 +13,11 @@ namespace TestLaunch
         public LoginHelper(ApplicationManager manager) : base(manager) { }
         public void Login(AccountData AD)
         {
+            if (IsLoggedIn())
+            {
+                if (IsLoggedIn(AD.UserName)) { return; }
+                Logout();
+            }
             manager._navigation.GoToHome();
             //manager._iWebDriver.FindElement(By.LinkText("Вход")).Click();
             //manager._iWebDriver.FindElement(By.LinkText("Вход")).Click();
@@ -22,7 +27,7 @@ namespace TestLaunch
             manager._iWebDriver.FindElement(By.Name("psswd")).Clear();
             manager._iWebDriver.FindElement(By.Name("psswd")).SendKeys(AD.Password);
         }
-        public void LogOut()
+        public void Logout()
         {
                 if (IsLoggedIn())
                {
@@ -38,13 +43,6 @@ namespace TestLaunch
             string tempUser = manager._iWebDriver.FindElement(By.ClassName("f_title")).Text;
             if (tempUser == username) { return true; }
             return false;
-        }
-        public void LogOut(string uname)
-        {
-            if (IsLoggedIn(uname))
-            {
-                manager._iWebDriver.FindElement(By.LinkText("Выход")).Click();
-            }
         }
     }
     

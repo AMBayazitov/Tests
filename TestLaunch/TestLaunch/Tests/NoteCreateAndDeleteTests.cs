@@ -15,13 +15,13 @@ namespace TestLaunch.Tests
         {
             Notification NF = new Notification("test", "test1");
             appMan._noteHelper.CreateNotification(NF);
-            appMan._loginHelper.LogOut();
+            appMan._loginHelper.Logout();
         }
         [Test]
         public void NoteDelete()
         { 
             appMan._noteHelper.DeleteLastNotification();
-            appMan._loginHelper.LogOut();
+            appMan._loginHelper.Logout();
         }
     }
 }
