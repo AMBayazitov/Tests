@@ -23,7 +23,7 @@ namespace TestLaunch.Tests
         [Test]
         public void InvalidLoginTest()
         {
-            AccountData AD = new AccountData("SaturnAlla", "a'q]w[ep");
+            AccountData AD = new AccountData("SaturnAlla6465", "a'q]w[ep");
             Notification NF = new Notification("Validation test", "Test failed");
             appMan._loginHelper.Login(AD);
             appMan._noteHelper.CreateNotification(NF);
