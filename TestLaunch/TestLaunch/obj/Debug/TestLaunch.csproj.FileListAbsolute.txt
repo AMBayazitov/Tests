@@ -56,3 +56,4 @@ E:\DotNET\Tests\Tests\TestLaunch\TestLaunch\obj\Debug\TestLaunch.csprojResolveAs
 E:\DotNET\Tests\Tests\TestLaunch\TestLaunch\obj\Debug\TestLaunch.csproj.CoreCompileInputs.cache
 E:\DotNET\Tests\Tests\TestLaunch\TestLaunch\obj\Debug\TestLaunch.dll
 E:\DotNET\Tests\Tests\TestLaunch\TestLaunch\obj\Debug\TestLaunch.pdb
+E:\DotNET\Tests\Tests\TestLaunch\TestLaunch\obj\Debug\TestLaunch.g.resources

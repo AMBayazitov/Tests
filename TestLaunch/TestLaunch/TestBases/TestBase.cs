@@ -15,14 +15,7 @@ namespace TestLaunch
         [SetUp]
         public void SetupTest()
         {
-            appMan = new ApplicationManager();
+            appMan = ApplicationManager.GetInstance();
         }
-
-        [TearDown]
-        public void TeardownTest()
-        {
-            appMan.Stop();
-        }
-
     }
 }

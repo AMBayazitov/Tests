@@ -16,7 +16,7 @@ namespace TestLaunch.Tests
             AccountData AD = new AccountData("SaturnAlla","a'q]w[ep");
             Notification NF = new Notification("Validation test", "Test passed");
             appMan._loginHelper.Login(AD);
-            appMan._noteHelper.CreateNotification(NF);
+            //appMan._noteHelper.CreateNotification(NF);
             appMan._loginHelper.Logout();
         }
 
@@ -26,7 +26,7 @@ namespace TestLaunch.Tests
             AccountData AD = new AccountData("SaturnAlla6465", "a'q]w[ep");
             Notification NF = new Notification("Validation test", "Test failed");
             appMan._loginHelper.Login(AD);
-            appMan._noteHelper.CreateNotification(NF);
+            //appMan._noteHelper.CreateNotification(NF);
             appMan._loginHelper.Logout();
         }
         
