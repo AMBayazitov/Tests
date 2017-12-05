@@ -12,7 +12,7 @@ namespace TestLaunch
         [SetUp]
         public void AuthTest()
         {
-            AccountData AD = new AccountData("SaturnAlla", "a'q]w[ep");
+            AccountData AD = new AccountData(Properties.Login, Properties.Password);
             appMan._loginHelper.Login(AD);
         }
     }

@@ -15,5 +15,6 @@ namespace TestLaunch
         }
         public string Title { get; set; }
         public string Note { get; set; }
+        public Notification() { }
     }
 }
